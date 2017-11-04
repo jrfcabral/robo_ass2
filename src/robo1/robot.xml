@@ -1,0 +1,25 @@
+<robot>
+    <robot_specifications>
+        <laser>
+            <filename>/home/joao/ass1/src/robo1/laser.xml</filename>
+            <laser_specifications>
+                <pose>
+                    <theta>0.7</theta>
+                </pose>
+                <min_angle>0</min_angle>
+                <max_angle>0.7</max_angle>
+            </laser_specifications>
+        </laser>
+
+        <laser>
+            <filename>/home/joao/ass1/src/robo1/laser.xml</filename>
+            <laser_specifications>
+                <pose>
+                    <theta>-0.7</theta>
+                </pose>
+                <min_angle>0</min_angle>
+                <max_angle>0.7</max_angle>
+            </laser_specifications>
+        </laser>
+    </robot_specifications>
+</robot>

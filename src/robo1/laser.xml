@@ -1,0 +1,17 @@
+<laser>
+    <laser_specifications>
+        <max_range>4</max_range>
+        <num_rays>270</num_rays>
+        <pose>
+            <x>0</x>
+            <y>0</y>
+            <theta>0</theta>
+        </pose>
+        <noise>
+            <noise_specifications>
+                <noise_mean>0</noise_mean>
+                <noise_std>0.03</noise_std>
+            </noise_specifications>
+        </noise>
+    </laser_specifications>
+</laser>
