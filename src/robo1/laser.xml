@@ -1,7 +1,7 @@
 <laser>
     <laser_specifications>
-        <max_range>4</max_range>
-        <num_rays>270</num_rays>
+        <max_range>1</max_range>
+        <num_rays>40</num_rays>
         <pose>
             <x>0</x>
             <y>0</y>

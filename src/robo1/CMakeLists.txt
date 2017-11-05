@@ -10,5 +10,8 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 
 add_executable(hello hello.cpp)
+add_executable(hello1 hello1.cpp)
+
 
 target_link_libraries(hello ${catkin_LIBRARIES})
+target_link_libraries(hello1 ${catkin_LIBRARIES})

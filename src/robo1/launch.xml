@@ -1,16 +1,31 @@
 <launch>
-    <include file="$(find stdr_launchers)/launch/server_with_map_and_gui.launch" />
+    <include file="$(find stdr_launchers)/launch/server_with_map_and_gui.launch"/>
     <node
-        pkg="stdr_robot"
-        type="robot_handler"
-        name="robot"
-        args="add /home/joao/ass1/src/robo1/robot.xml 1 1 0"
-        launch-prefix="xterm -e"
-        />
+            pkg="stdr_robot"
+            type="robot_handler"
+            name="robot"
+            args="add /home/joao/ass1/src/robo1/robot.xml 1 1 0"
+            launch-prefix="xterm -e"
+    />
     <node
-        pkg="robo1"
-        type="hello"
-        name="hello"
-        required="true"
-        />
+            pkg="topic_tools"
+            type="mux"
+            name="mux"
+            required="true"
+            args="/robot0/cmd_vel /subsumption/level0 /subsumption/level1"
+    />
+    <node
+            pkg="robo1"
+            type="hello"
+            name="level0"
+            required="true"
+    />
+    <node
+            pkg="robo1"
+            type="hello1"
+            name="level1"
+            required="true"
+    />
+
+
 </launch>
