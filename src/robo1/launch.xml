@@ -1,5 +1,17 @@
 <launch>
-    <include file="$(find stdr_launchers)/launch/server_with_map_and_gui.launch"/>
+    <include file="$(find stdr_launchers)/launch/server_no_map.launch"/>
+    <node
+            pkg="stdr_server"
+            type="load_map"
+            name="map"
+            args="/home/joao/ass1/src/robo1/map_d.yaml"
+        />
+
+    <node
+            pkg="stdr_gui"
+            type="stdr_gui_node"
+            name="gui"
+        />
     <node
             pkg="stdr_robot"
             type="robot_handler"
@@ -20,12 +32,5 @@
             name="level0"
             required="true"
     />
-    <node
-            pkg="robo1"
-            type="hello1"
-            name="level1"
-            required="true"
-    />
-
 
 </launch>

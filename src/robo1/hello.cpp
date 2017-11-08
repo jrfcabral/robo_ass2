@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
 
     while (ros::ok()) {
         geometry_msgs::Twist msg;
-        msg.linear.x = double(rand())/double(RAND_MAX);
+        msg.linear.x = 0.5;
         msg.angular.z = 2*(rand())/double(RAND_MAX);
 
         pub.publish(msg);
