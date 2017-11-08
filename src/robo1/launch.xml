@@ -32,5 +32,10 @@
             name="level0"
             required="true"
     />
-
+    <node
+            pkg="robo1"
+            type="hello1"
+            name="level1"
+            required="true"
+    />
 </launch>
