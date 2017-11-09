@@ -32,6 +32,7 @@ int main(int argc, char **argv) {
     ros::Subscriber sub1 = nh.subscribe("/robot0/laser_1", 1000, &sensor1);
     ros::Publisher pub = nh.advertise<geometry_msgs::Twist>("/subsumption/level1", 1000);
     ros::ServiceClient selectService = nh.serviceClient<topic_tools::MuxSelect>("/mux/select");
+    bool wallLeft = false;
 
     while (ros::ok()) {
         ros::spinOnce();
@@ -45,9 +46,18 @@ int main(int argc, char **argv) {
             msg.angular.z -= 2*(1/avgDistance0);
         if (avgDistance1 < std::numeric_limits<float>::infinity() )
             msg.angular.z += 2*(1/avgDistance1);
+        else {
+            if (wallLeft)
+                msg.angular.z = -1.7;
+            else
+                msg.angular.z = 1.7;
+        }
         if (!inhibited && (avgDistance1 < std::numeric_limits<float>::infinity() || avgDistance0 < std::numeric_limits<float>::infinity())) {
             ROS_INFO_STREAM(avgDistance0);
             ROS_INFO_STREAM(avgDistance1);
+            if (avgDistance1 < avgDistance0) {
+                wallLeft = true;
+            }
             inhibit(selectService);
         }
 

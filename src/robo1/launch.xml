@@ -16,7 +16,7 @@
             pkg="stdr_robot"
             type="robot_handler"
             name="robot"
-            args="add /home/joao/ass1/src/robo1/robot.xml 1 1 0"
+            args="add /home/joao/ass1/src/robo1/robot.xml 9.2 6.5 0"
             launch-prefix="xterm -e"
     />
     <node
